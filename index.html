@@ -59,7 +59,6 @@
       align-items: center;
       padding: 12px 0;
       opacity: 0.95;
-      cursor: pointer;
       border-radius: 8px;
       transition: background 0.2s, color 0.2s;
     }
@@ -89,8 +88,8 @@
     }
 
     .main {
-      flex-grow: 1; /* Orijinal flex-grow */
-      background: #f7fafd; /* Orijinal main arka planı */
+      flex-grow: 1; 
+      background: #f7fafd; 
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -98,7 +97,7 @@
 
     .inbox {
       width: 300px;
-      background: linear-gradient(90deg, #eaf6ff 0%, #fff 100%); /* Orijinal inbox arka planı */
+      background: linear-gradient(90deg, #eaf6ff 0%, #fff 100%); 
       border-radius: 0;
       box-shadow: none;
       margin: 0;
@@ -133,7 +132,6 @@
     .inbox-actions i {
       color: #b0b8c9;
       font-size: 15px;
-      cursor: pointer;
       transition: color 0.2s;
     }
 
@@ -147,7 +145,6 @@
       border-radius: 0;
       box-shadow: none;
       padding: 12px 18px 8px 18px;
-      cursor: pointer;
       transition: background 0.2s;
       border: none;
       font-size: 14px;
@@ -229,7 +226,6 @@
       display: inline-block;
       color: #b0b8c9;
       font-size: 18px;
-      cursor: pointer;
       transition: color 0.2s;
     }
 
@@ -279,7 +275,7 @@
 
     .email-header small {
       font-size: 13px;
-      color: #b0b8c9; /* Orijinal renk */
+      color: #b0b8c9; 
       font-weight: 400;
       letter-spacing: 0.01em;
       margin-top: 0;
@@ -379,15 +375,11 @@
       z-index: 2;
     }
     .half-icon {
-  font-size: 16px;
-  color:hsl(210, 5%, 59%);
-  display: inline-block;
-  clip-path: inset(0 0 35% 0);
-}
-
-
-
-
+      font-size: 16px;
+      color:hsl(210, 5%, 59%);
+      display: inline-block;
+      clip-path: inset(0 0 35% 0);
+    }
     .sidebar li .custom-shield-icon {
       display: inline-block;
       vertical-align: middle;
@@ -532,8 +524,10 @@
               <small>aaron@explore.gov</small>
             </div>
             <div class="email-actions">
-              <i class="fa-solid fa-rotate-left"></i>
-              <i class="fa-solid fa-angle-down"></i>
+                <span <i class="fas fa-undo-alt half-icon"></i>
+                    <i class="fa-solid fa-angle-down"></i>
+                    </span>
+              
             </div>
           </div>
           <div class="email-title">Alternative Chart Design Exploration</div>
