@@ -19,13 +19,13 @@
     body {
       display: flex;
       height: 100vh;
-      background: linear-gradient(135deg, #002f4b, #00b4db);
+      background: linear-gradient(135deg, #002f4b, #00b4db); /* Orijinal arka plan */
       overflow: hidden;
     }
 
     .sidebar {
       width: 220px;
-      background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+      background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%); /* Orijinal sidebar arka planı */
       color: #eaf6ff;
       padding: 20px 0;
       box-shadow: 2px 0 16px 0 rgba(30,58,138,0.08);
@@ -89,8 +89,8 @@
     }
 
     .main {
-      flex-grow: 1;
-      background: #f7fafd;
+      flex-grow: 1; /* Orijinal flex-grow */
+      background: #f7fafd; /* Orijinal main arka planı */
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -98,7 +98,7 @@
 
     .inbox {
       width: 300px;
-      background: transparent;
+      background: linear-gradient(90deg, #eaf6ff 0%, #fff 100%); /* Orijinal inbox arka planı */
       border-radius: 0;
       box-shadow: none;
       margin: 0;
@@ -115,54 +115,68 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-weight: bold;
-      padding: 20px;
-      border-bottom: 1px solid #e0e6ed;
-      background: #f7fafd;
-      color: #222b45;
+      font-weight: 700;
       font-size: 15px;
-      border-radius: 0;
+      color: #222b45;
+      padding: 18px 18px 10px 18px;
+      background: transparent;
+      border: none;
+      letter-spacing: 0.01em;
+    }
+
+    .inbox-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .inbox-actions i {
-      margin-left: 16px;
+      color: #b0b8c9;
+      font-size: 15px;
       cursor: pointer;
-      color: #2563eb;
-      font-size: 18px;
       transition: color 0.2s;
     }
+
     .inbox-actions i:hover {
-      color: #1e3a8a;
+      color: #2563eb;
     }
 
     .message {
-      background: #fff;
-      margin: 10px 16px;
+      background: transparent;
+      margin: 0 0 2px 0;
       border-radius: 0;
       box-shadow: none;
-      padding: 16px 18px 12px 18px;
+      padding: 12px 18px 8px 18px;
       cursor: pointer;
       transition: background 0.2s;
       border: none;
-      font-size: 15px;
+      font-size: 14px;
       display: flex;
       flex-direction: column;
       gap: 2px;
+      color: #222b45;
     }
+
     .message.selected, .message.active {
       background: #eaf6ff;
     }
+
     .message:hover {
       background: #eaf6ff;
     }
+
     .message-name {
       font-weight: 600;
       color: #222b45;
-      font-size: 15px;
+      font-size: 14px;
+      margin-bottom: 2px;
     }
+
     .message-preview {
-      font-size: 13px;
-      color: #7b8ca6;
+      font-size: 12px;
+      color: #b0b8c9;
+      font-weight: 400;
+      line-height: 1.5;
     }
 
     .content {
@@ -188,67 +202,106 @@
     }
 
     .mail-card-header {
-      background: #f7fafd;
+      background: #ffffff;
       padding: 24px 40px 16px 40px;
-      border-bottom: 1px solid #e0e6ed;
-      box-shadow: 0 2px 8px 0 rgba(60,60,90,0.04);
       border-radius: 0;
     }
 
-    .mail-card-body {
-      padding: 32px 40px 40px 40px;
+    .header-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 32px;
+    }
+
+    .email-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      margin-left: auto;
+    }
+
+    .email-actions i {
+      display: inline-block;
+      color: #b0b8c9;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .email-actions i:hover {
+      color: #2563eb;
     }
 
     .email-header {
       display: flex;
       align-items: center;
-      margin-bottom: 18px;
+      justify-content: space-between;
+      margin-bottom: 32px;
       padding-bottom: 0;
       border: none;
+      flex-direction: row;
+      gap: 16px;
     }
+
+    .email-header > div:first-of-type {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
 
     .email-header img {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      margin-right: 15px;
+      margin-right: 16px;
     }
 
     .email-header div {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: flex-start;
     }
 
     .email-header div > div {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
       color: #222b45;
       margin-bottom: 2px;
+      letter-spacing: 0.01em;
     }
 
     .email-header small {
       font-size: 13px;
-      color: #b0b8c9;
+      color: #b0b8c9; /* Orijinal renk */
       font-weight: 400;
       letter-spacing: 0.01em;
+      margin-top: 0;
     }
 
     .email-title {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 400;
       color: #222b45;
-      margin: 0 0 24px 0;
+      margin: 0 0 32px 0;
       padding: 0;
       border: none;
       line-height: 1.22;
       letter-spacing: 0.01em;
       font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+      text-align: left;
+      width: 100%; 
     }
 
     .email-body {
       font-size: 1.08rem;
-      color: #b0b8c9;
+      color: #8a8484ee;
       max-width: 700px;
       padding: 0;
       border: none;
@@ -256,6 +309,7 @@
       line-height: 1.7;
       font-weight: 400;
       font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+      text-align: left;
     }
 
     .mail-card-header, .mail-card-body {
@@ -267,10 +321,19 @@
     .chart-container {
       margin-top: 40px;
       max-width: 600px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #ffffff;
+      box-shadow: 0 2px 8px 0 rgba(60,60,90,0.04);
+
       padding: 20px;
+    }
+
+    .chart-container img {
+      max-width: 100%;
+      height: auto;
+      max-height: 1800px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
     }
 
     .sidebar li span.material-icons {
@@ -310,15 +373,25 @@
       top: 50%;
       width: 10px;
       height: 2px;
-      background: #00e6c3;
+      color: hsl(210, 5%, 59%);
       border-radius: 1px;
       transform: translateY(-50%);
       z-index: 2;
     }
+    .half-icon {
+  font-size: 16px;
+  color:hsl(210, 5%, 59%);
+  display: inline-block;
+  clip-path: inset(0 0 35% 0);
+}
+
+
+
 
     .sidebar li .custom-shield-icon {
       display: inline-block;
       vertical-align: middle;
+      color: hsl(210, 5%, 59%);
       margin-right: 14px;
       width: 22px;
       height: 22px;
@@ -327,6 +400,7 @@
       display: block;
       width: 100%;
       height: 100%;
+      stroke: rgb(255, 255, 255);
     }
 
     .sidebar li .custom-mail-icon {
@@ -371,14 +445,14 @@
 <body>
   <div class="window-controls">
     <i class="fa-solid fa-minus"></i>
-    <i class="fa-solid fa-square"></i>
+    <i class="fa-regular fa-square"></i>
     <i class="fa-solid fa-xmark close"></i>
   </div>
   <div class="sidebar">
     <ul>
       <li class="hamburger-icon"><span class="material-icons">menu</span></li>
-      <li><span class="material-icons">inbox</span><span>All Inbox</span></li>
-      <li><span class="material-icons">bolt</span><span>Smart Inbox</span></li>
+      <li><span class="material-icons">mail_outline</span><span>All Inbox</span></li>
+      <li><span class="material-symbols-outlined">inbox</span><span>Smart Inbox</span></li>
       <li><span class="material-icons">check_box_outline_blank</span><span>Task</span></li>
       <li><span class="material-icons">calendar_today</span><span>Calendar</span></li>
       <li><span class="material-icons">radio_button_unchecked</span><span>Pins</span></li>
@@ -457,6 +531,10 @@
               <div>Aaron Ruiz</div>
               <small>aaron@explore.gov</small>
             </div>
+            <div class="email-actions">
+              <i class="fa-solid fa-rotate-left"></i>
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
           </div>
           <div class="email-title">Alternative Chart Design Exploration</div>
         </div>
@@ -467,70 +545,14 @@
             perceive that my own individuality was now:
           </div>
           <div class="chart-container">
-            <canvas id="chartCanvas" width="600" height="300"></canvas>
+            <img src="foto.jpg" alt="Chart Image">
           </div>
         </div>
       </div>
     </div>
   </div>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
-  <script>
-    // Scene setup
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xdff1ef);
+  <div class="background-container"></div>
 
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    camera.position.z = 8;
-    camera.position.y = 3;
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-
-    // Light
-    const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(0, 10, 10).normalize();
-    scene.add(light);
-
-    // Peak Colors
-    const colors = [0xff6600, 0x9966cc, 0xffcc00, 0xff99cc, 0xcc0033, 0x3399ff, 0x66cc33];
-
-    // Create peaks
-    const numPeaks = 7;
-    const radius = 2;
-
-    for (let i = 0; i < numPeaks; i++) {
-      const angle = (i / numPeaks) * Math.PI * 2;
-      const height = Math.random() * 3 + 2;
-
-      const shape = new THREE.ConeGeometry(1, height, 4);
-      const material = new THREE.MeshPhongMaterial({ color: colors[i], flatShading: true });
-      const cone = new THREE.Mesh(shape, material);
-
-      cone.position.x = radius * Math.cos(angle);
-      cone.position.z = radius * Math.sin(angle);
-      cone.position.y = height / 2;
-
-      cone.rotation.y = angle + Math.PI / 4; // rotate so it faces outward
-      scene.add(cone);
-    }
-
-    // Animation loop
-    function animate() {
-      requestAnimationFrame(animate);
-      scene.rotation.y += 0.005;
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // Resize handler
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-  </script>
 </body>
 </html>
