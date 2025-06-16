@@ -19,13 +19,13 @@
     body {
       display: flex;
       height: 100vh;
-      background: linear-gradient(135deg, #002f4b, #00b4db); /* Orijinal arka plan */
+      background: linear-gradient(135deg, rgba(0, 47, 75, 0.7), rgba(0, 180, 219, 0.7)); 
       overflow: hidden;
     }
 
     .sidebar {
       width: 220px;
-      background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%); /* Orijinal sidebar arka planı */
+      background: linear-gradient(135deg, #405F9F 0%, #3D5B99 100%); 
       color: #eaf6ff;
       padding: 20px 0;
       box-shadow: 2px 0 16px 0 rgba(30,58,138,0.08);
@@ -97,7 +97,7 @@
 
     .inbox {
       width: 300px;
-      background: linear-gradient(90deg, #eaf6ff 0%, #fff 100%); 
+      background: linear-gradient(90deg, ##405F9F 0%, #fff 100%); 
       border-radius: 0;
       box-shadow: none;
       margin: 0;
@@ -144,14 +144,15 @@
       margin: 0 0 2px 0;
       border-radius: 0;
       box-shadow: none;
-      padding: 12px 18px 8px 18px;
+      padding: 16px 18px;
       transition: background 0.2s;
       border: none;
       font-size: 14px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 6px;
       color: #222b45;
+      min-height: 70px;
     }
 
     .message.selected, .message.active {
@@ -165,12 +166,12 @@
     .message-name {
       font-weight: 600;
       color: #222b45;
-      font-size: 14px;
-      margin-bottom: 2px;
+      font-size: 15px;
+      margin-bottom: 4px;
     }
 
     .message-preview {
-      font-size: 12px;
+      font-size: 13px;
       color: #b0b8c9;
       font-weight: 400;
       line-height: 1.5;
@@ -230,7 +231,7 @@
     }
 
     .email-actions i:hover {
-      color: #2563eb;
+      color: #405F9F;
     }
 
     .email-header {
@@ -317,10 +318,12 @@
     .chart-container {
       margin-top: 40px;
       max-width: 600px;
-      background: #ffffff;
-      box-shadow: 0 2px 8px 0 rgba(60,60,90,0.04);
-
-      padding: 20px;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      position: relative;
+      border: none;
+      display: inline-block;
     }
 
     .chart-container img {
@@ -329,7 +332,38 @@
       max-height: 1800px;
       object-fit: contain;
       display: block;
-      margin: 0 auto;
+      margin: 0;
+      opacity: 0.8;
+      border-radius: 8px;
+    }
+
+    .chart-window-controls {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      gap: 6px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 6px;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    .chart-window-controls i {
+      color: #666;
+      font-size: 13px;
+      padding: 4px;
+      border-radius: 4px;
+    }
+
+    .chart-window-controls i:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .chart-window-controls .close:hover {
+      background-color: #e81123;
+      color: white;
     }
 
     .sidebar li span.material-icons {
@@ -419,7 +453,6 @@
     }
     .window-controls i {
       color: #666;
-      cursor: pointer;
       font-size: 14px;
       padding: 4px;
       border-radius: 4px;
@@ -430,6 +463,26 @@
     .window-controls .close:hover {
       background-color: #e81123;
       color: white;
+    }
+
+    .message.dark {
+      background: #e5e7eb;
+    }
+
+    .sidebar li .pins-icon {
+      position: relative;
+    }
+
+    .sidebar li .pins-icon::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      background-color: #eaf6ff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
     }
 
   </style>
@@ -447,7 +500,7 @@
       <li><span class="material-symbols-outlined">inbox</span><span>Smart Inbox</span></li>
       <li><span class="material-icons">check_box_outline_blank</span><span>Task</span></li>
       <li><span class="material-icons">calendar_today</span><span>Calendar</span></li>
-      <li><span class="material-icons">radio_button_unchecked</span><span>Pins</span></li>
+      <li><span class="material-icons pins-icon">radio_button_unchecked</span><span>Pins</span></li>
       <li class="spam-icon">
         <span class="custom-shield-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00e6c3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -480,7 +533,7 @@
         <div class="message-name">Angela Robertson</div>
         <div class="message-preview">Business card feedback confirmed...</div>
       </div>
-      <div class="message">
+      <div class="message dark">
         <div class="message-name">Aaron Ruiz</div>
         <div class="message-preview">New chart designs ready to preview.</div>
       </div>
@@ -539,6 +592,11 @@
             perceive that my own individuality was now:
           </div>
           <div class="chart-container">
+            <div class="chart-window-controls">
+              <i class="fa-solid fa-minus"></i>
+              <i class="fa-regular fa-square"></i>
+              <i class="fa-solid fa-xmark close"></i>
+            </div>
             <img src="foto.jpg" alt="Chart Image">
           </div>
         </div>
@@ -550,3 +608,4 @@
 
 </body>
 </html>
+
